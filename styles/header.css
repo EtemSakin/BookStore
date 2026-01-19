@@ -1,13 +1,27 @@
 header {
   height: 100px;
-  background: linear-gradient(135deg, #2b2f55, #1e152b);
-  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
   position: sticky;
-  z-index: 1000;
   top: 0;
+  z-index: 1000;
+
+  /* Hintergrundbild */
+  background-image:
+    linear-gradient(
+      rgba(15, 16, 32, 0.7),
+      rgba(15, 16, 32, 0.7)
+    ),
+    url("../assets/images/header-eagles.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.4);
+
   display: flex;
   justify-content: center;
 }
+
 
 .header-inner {
   width: 100%;
