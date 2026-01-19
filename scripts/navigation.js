@@ -4,3 +4,12 @@ function handleKey(event, action) {
     action();
   }
 }
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  const btn = document.querySelector(".burger");
+
+  nav.classList.toggle("open");
+
+  const isOpen = nav.classList.contains("open");
+  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
