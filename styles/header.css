@@ -106,33 +106,36 @@ nav {
   .hauptmenu {
     display: none;
     position: absolute;
-    top: 100px;
-    right: 16px;
-    background: rgba(15, 16, 32, 0.92);
+    top: 100%;
+    right: 0;
+
+    background: rgba(15, 16, 32, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
     padding: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
   }
 
-  .hauptmenu ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .hauptmenu ul a {
-    margin-left: 0;
-    padding: 8px 10px;
-    width: 100%;
-  }
-
-  /* Wenn offen */
   .hauptmenu.open {
     display: block;
   }
 
+  .hauptmenu ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hauptmenu ul a {
+    margin-left: 0;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: left;
+  }
+ 
+
   header {
     position: sticky;
   }
-}
+  }
