@@ -1,69 +1,71 @@
+const DEFAULT_COVER = "./assets/images/covers/default-cover.png";
+
 let books = [
   {
     name: "Der Herr der Ringe – Die Gefährten",
     author: "J. R. R. Tolkien",
-    cover: "./assets/images/default-cover.png",
+    cover: "./assets/images/covers/lotr-fellowship.png",
     likes: 3250,
     liked: true,
     price: 14.99,
     publishedYear: 1954,
     genre: "Fantasy",
     comments: [
-      { name: "MiddleEarthFan", comment: "Ein epischer Einstieg in eine der größten Fantasy-Geschichten aller Zeiten." },
-      { name: "BookLover", comment: "Die Gemeinschaft der Gefährten ist unvergesslich – jeder Charakter hat Tiefe." }
+      { name: "MiddleEarthFan", comment: "Ein epischer Einstieg in eine der größten Fantasy-Geschichten." },
+      { name: "BookLover", comment: "Die Gemeinschaft ist unvergesslich – starke Charaktere." }
     ]
   },
   {
     name: "Der Herr der Ringe – Die zwei Türme",
     author: "J. R. R. Tolkien",
-    cover: "./assets/images/default-cover.png",
+    cover: "./assets/images/covers/lotr-two-towers.png",
     likes: 2890,
     liked: false,
     price: 14.99,
     publishedYear: 1954,
     genre: "Fantasy",
     comments: [
-      { name: "FantasyNerd", comment: "Düsterer, spannender und emotionaler als der erste Teil." }
+      { name: "FantasyNerd", comment: "Düster, spannend und richtig atmosphärisch." }
     ]
   },
   {
     name: "Der Herr der Ringe – Die Rückkehr des Königs",
     author: "J. R. R. Tolkien",
-    cover: "./assets/images/default-cover.png",
+    cover: "./assets/images/covers/lotr-return-king.png",
     likes: 4100,
     liked: true,
     price: 16.99,
     publishedYear: 1955,
     genre: "Fantasy",
     comments: [
-      { name: "EpicReader", comment: "Ein monumentales Finale, das Maßstäbe für das Fantasy-Genre gesetzt hat." },
-      { name: "GondorGuard", comment: "Der Höhepunkt der Reise – emotional, gewaltig, zeitlos." }
+      { name: "EpicReader", comment: "Ein monumentales Finale – absolut legendär." },
+      { name: "GondorGuard", comment: "Das Ende fühlt sich verdient und episch an." }
     ]
   },
   {
     name: "Der Hobbit",
     author: "J. R. R. Tolkien",
-    cover: "./assets/images/default-cover.png",
+    cover: "./assets/images/covers/hobbit.png",
     likes: 3650,
     liked: true,
     price: 12.99,
     publishedYear: 1937,
     genre: "Fantasy",
     comments: [
-      { name: "BilboFan", comment: "Ein wundervolles Abenteuer mit Charme, Humor und Herz." }
+      { name: "BilboFan", comment: "Charmant, abenteuerlich und leicht zu lesen." }
     ]
   },
   {
     name: "Das Silmarillion",
     author: "J. R. R. Tolkien",
-    cover: "./assets/images/default-cover.png",
+    cover: "./assets/images/covers/silmarillion.png",
     likes: 1980,
     liked: false,
     price: 18.99,
     publishedYear: 1977,
     genre: "Fantasy",
     comments: [
-      { name: "LoreMaster", comment: "Anspruchsvoll, aber unverzichtbar für jeden, der Mittelerde wirklich verstehen will." }
+      { name: "LoreMaster", comment: "Anspruchsvoll, aber perfekt für die Hintergrundgeschichte." }
     ]
   }
 ];
@@ -73,16 +75,21 @@ function init() {
 }
 
 function renderBookCards() {
-  const bookCardSectionRef = document.getElementById("bookCardSection");
+  let bookCardSectionRef = document.getElementById("bookCardSection");
   bookCardSectionRef.innerHTML = "";
 
   for (let indexBook = 0; indexBook < books.length; indexBook++) {
+    // Fallback, falls cover fehlt oder leer ist
+    if (!books[indexBook].cover) {
+      books[indexBook].cover = DEFAULT_COVER;
+    }
+
     bookCardSectionRef.innerHTML += getBookCardsHtml(indexBook);
   }
 }
 
 function like(indexBook) {
-  const book = books[indexBook];
+  let book = books[indexBook];
 
   if (book.liked) {
     book.likes--;
@@ -98,18 +105,19 @@ function like(indexBook) {
 function addComment(event, indexBook) {
   event.preventDefault();
 
-  const nameInput = document.getElementById(`userName-${indexBook}`);
-  const commentInput = document.getElementById(`userComment-${indexBook}`);
+  let nameInput = document.getElementById(`userName-${indexBook}`);
+  let commentInput = document.getElementById(`userComment-${indexBook}`);
 
-  const name = nameInput.value.trim();
-  const comment = commentInput.value.trim();
+  let newComment = {
+    name: nameInput.value,
+    comment: commentInput.value
+  };
 
-  if (!name || !comment) return;
-
-  books[indexBook].comments.push({ name, comment });
+  books[indexBook].comments.push(newComment);
 
   nameInput.value = "";
   commentInput.value = "";
 
   renderBookCards();
 }
+
