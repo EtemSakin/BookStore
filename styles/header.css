@@ -108,20 +108,21 @@ nav {
   }
 
   .hauptmenu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    width: 200px;
+  display: none;
+  position: absolute;
+  top: 90%;
+  right: 0;
+  width: 150px;
 
-    background: rgba(15, 16, 32, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 10px;
+  background: rgba(15, 16, 32, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 8px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    z-index: 2000;
-  }
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  z-index: 2000;
+}
+
 
   .hauptmenu.open {
     display: block;
@@ -130,8 +131,8 @@ nav {
   .hauptmenu ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin: 0;
+    gap: 0;
+    margin: -10px;
     padding: 0;
     list-style: none;
   }
@@ -141,20 +142,17 @@ nav {
   }
 
   .hauptmenu a {
-    display: block;
-    width: 100%;
-    padding: 12px 12px;
-    margin: 0;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #fff;
-  }
+  display: block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
 
-  .hauptmenu a:hover {
-    background: rgba(255, 255, 255, 0.08);
-    filter: none;
-    color: #ea8e0e;
-  }
+.hauptmenu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ea8e0e;
+}
+
   nav {
     height: auto;
   }

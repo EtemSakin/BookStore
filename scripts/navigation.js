@@ -13,3 +13,9 @@ function toggleMenu() {
   const isOpen = nav.classList.contains("open");
   btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
+document.querySelectorAll("#mainNav a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mainNav").classList.remove("open");
+    document.querySelector(".burger").setAttribute("aria-expanded", "false");
+  });
+});
