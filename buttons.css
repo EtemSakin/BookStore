@@ -1,0 +1,56 @@
+.like-button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.like-button img {
+  height: 20px;
+  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: sepia(1);
+  cursor: pointer;
+}
+
+.like-button:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0px 0px 8px #ea8e0e);
+}
+
+.like-button:active img {
+  filter: none;
+}
+
+.like-button img.liked {
+  filter: none;
+}
+
+.send-comment-button {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-weight: 100;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  padding: 5px;
+}
+
+.send-comment-button img {
+  width: 40px;
+  height: 20px;
+}
+
+.send-comment-button:hover {
+  box-shadow: 0 0 10px #393f74;
+  cursor: pointer;
+}
+
+.like-button:focus-visible,
+.send-comment-button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #ea8e0e;
+  outline-offset: 2px;
+}
