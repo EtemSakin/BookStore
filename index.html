@@ -34,7 +34,18 @@
 
         <h1 class="sr-only">BookStore</h1>
 
-        <nav class="hauptmenu" aria-label="Hauptnavigation">
+        <button
+          class="burger"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="hauptmenu" id="mainNav" aria-label="Hauptnavigation">
           <ul>
             <li><a href="./index.html" class="active">Start</a></li>
             <li><a href="#">Genres</a></li>
