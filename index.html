@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/bookcards.css" />
+    <link rel="stylesheet" href="./styles/buttons.css" />
+    <link rel="stylesheet" href="./styles/fonts-and-headline.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon.png"
+      type="image/png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Bookstore</title>
+  </head>
+
+  <body onload="init()">
+    <header>
+      <div class="header-inner">
+        <a href="./index.html" class="logo-link">BOOKSTORE</a>
+
+        <h1 class="sr-only">BookStore</h1>
+
+        <nav class="hauptmenu" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="./index.html" class="active">Start</a></li>
+            <li><a href="#">Genres</a></li>
+            <li><a href="#">Bestseller</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="body-content">
+      <section
+        class="book-card-section"
+        id="bookCardSection"
+        aria-label="Bücherübersicht"
+      ></section>
+    </main>
+
+    <footer>
+      <p>Copyright © 2026 EtemS</p>
+    </footer>
+
+    <script src="./scripts/navigation.js"></script>
+    <script src="./scripts/books.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
